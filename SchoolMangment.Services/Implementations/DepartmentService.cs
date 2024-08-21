@@ -31,6 +31,13 @@ namespace SchoolMangment.Services.Implementations
 
             return departments;
         }
+
+        public async Task<bool> IsDepartmentExistById(int id)
+        {
+            return await _departmentRepository
+                .GetTableAsNotTracked()
+                .AnyAsync(x => x.Id == id);
+        }
         #endregion
 
     }
