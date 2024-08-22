@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SchoolMangment.Infastructure.Data;
 
@@ -11,9 +12,11 @@ using SchoolMangment.Infastructure.Data;
 namespace SchoolMangment.Infastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240821163738_Add-Custom-User")]
+    partial class AddCustomUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -180,7 +183,7 @@ namespace SchoolMangment.Infastructure.Migrations
                         .IsUnique()
                         .HasFilter("[InsManagerId] IS NOT NULL");
 
-                    b.ToTable("Departments", (string)null);
+                    b.ToTable("Departments");
                 });
 
             modelBuilder.Entity("SchoolMangment.Data.Entities.DepartmetSubject", b =>
@@ -203,7 +206,7 @@ namespace SchoolMangment.Infastructure.Migrations
 
                     b.HasIndex("SubjectId");
 
-                    b.ToTable("DepartmetSubjects", (string)null);
+                    b.ToTable("DepartmetSubjects");
                 });
 
             modelBuilder.Entity("SchoolMangment.Data.Entities.Instructor", b =>
@@ -246,7 +249,7 @@ namespace SchoolMangment.Infastructure.Migrations
 
                     b.HasIndex("SupervisorId");
 
-                    b.ToTable("Instructor", (string)null);
+                    b.ToTable("Instructor");
                 });
 
             modelBuilder.Entity("SchoolMangment.Data.Entities.Student", b =>
@@ -280,7 +283,7 @@ namespace SchoolMangment.Infastructure.Migrations
 
                     b.HasIndex("DepartmentId");
 
-                    b.ToTable("Students", (string)null);
+                    b.ToTable("Students");
                 });
 
             modelBuilder.Entity("SchoolMangment.Data.Entities.StudentSubject", b =>
@@ -306,7 +309,7 @@ namespace SchoolMangment.Infastructure.Migrations
 
                     b.HasIndex("SubjectId");
 
-                    b.ToTable("StudentSubjects", (string)null);
+                    b.ToTable("StudentSubjects");
                 });
 
             modelBuilder.Entity("SchoolMangment.Data.Entities.Subject", b =>
@@ -330,7 +333,7 @@ namespace SchoolMangment.Infastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Subjects", (string)null);
+                    b.ToTable("Subjects");
                 });
 
             modelBuilder.Entity("SchoolMangment.Data.Entities.SubjectInsturctor", b =>
@@ -356,7 +359,7 @@ namespace SchoolMangment.Infastructure.Migrations
 
                     b.HasIndex("SubjectId");
 
-                    b.ToTable("SubjectInsturctor", (string)null);
+                    b.ToTable("SubjectInsturctor");
                 });
 
             modelBuilder.Entity("SchoolMangment.Data.Identity.AppUser", b =>

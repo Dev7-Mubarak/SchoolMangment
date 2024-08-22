@@ -44,7 +44,7 @@ namespace SchoolMangment.Core.Features.Departments.Query.Handler
             // Maping
             var mapper = _mapper.Map<GetDepartmentByIdResponse>(response);
 
-            // pag
+            // paging
             Expression<Func<Student, StudentResponse>> expression
              = e => new StudentResponse(e.Id, e.NameEn);
 

@@ -18,9 +18,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 #region Add Dependency Injection
-builder.Services.AddInfrastructureDependencies();
-builder.Services.AddServicesDependencies();
-builder.Services.AddCoreDependencies();
+builder.Services.AddInfrastructureDependencies()
+                .AddServicesDependencies()
+                .AddCoreDependencies()
+                .AddServiceRegistration();
 #endregion
 
 #region Localization
