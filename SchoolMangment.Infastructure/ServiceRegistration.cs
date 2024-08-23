@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.DependencyInjection;
 using SchoolMangment.Data.Identity;
 using SchoolMangment.Infastructure.Data;
 
@@ -10,7 +11,7 @@ namespace SchoolMangment.Infastructure
         {
             #region Identity
 
-            services.AddIdentityCore<AppUser>(option =>
+            services.AddIdentity<AppUser, IdentityRole>(option =>
             {
                 // Password settings.
                 option.Password.RequireDigit = true;
@@ -30,7 +31,6 @@ namespace SchoolMangment.Infastructure
                 "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
                 option.User.RequireUniqueEmail = true;
                 option.SignIn.RequireConfirmedEmail = false;
-
 
             }).AddEntityFrameworkStores<ApplicationDbContext>();
             #endregion
