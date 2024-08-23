@@ -12,6 +12,5 @@ namespace SchoolMangment.Api.Controllers
         {
             return NewResult(await _mediator.Send(query));
         }
-
     }
 }
