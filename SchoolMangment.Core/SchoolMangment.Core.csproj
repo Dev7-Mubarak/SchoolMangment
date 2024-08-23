@@ -48,7 +48,11 @@
 
   <ItemGroup>
     <Folder Include="Features\Departments\Command\" />
+    <Folder Include="Features\Users\Query\Handler\" />
+    <Folder Include="Features\Users\Query\Modles\" />
+    <Folder Include="Features\Users\Query\" />
     <Folder Include="Mapping\Departments\CommandMapping\" />
+    <Folder Include="Mapping\Users\QueryMapping\" />
   </ItemGroup>
 
 </Project>
