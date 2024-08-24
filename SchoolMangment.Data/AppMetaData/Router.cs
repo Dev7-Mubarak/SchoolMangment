@@ -15,7 +15,7 @@
             public const string Paginted = Prefix + "Paginted";
             public const string GetById = Prefix + "{Id}";
             public const string Create = Prefix + "Create";
-            public const string Edit = Prefix + "Edit";
+            public const string Update = Prefix + "Update";
             public const string Delete = Prefix + "{Id}";
         }
 
@@ -26,7 +26,7 @@
             public const string Paginted = Prefix + "Paginted";
             public const string GetById = Prefix + "{Id}";
             public const string Create = Prefix + "Create";
-            public const string Edit = Prefix + "Edit";
+            public const string Update = Prefix + "Update";
             public const string Delete = Prefix + "{Id}";
         }
 
@@ -37,7 +37,7 @@
             public const string Paginted = Prefix + "Paginted";
             public const string GetById = Prefix + "{Id}";
             public const string Create = Prefix + "Create";
-            public const string Edit = Prefix + "Edit";
+            public const string Update = Prefix + "Update";
             public const string Delete = Prefix + "{Id}";
         }
     }

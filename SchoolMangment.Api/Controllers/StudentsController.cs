@@ -33,8 +33,8 @@ namespace SchoolMangment.Api.Controllers
             return NewResult(await _mediator.Send(command));
         }
 
-        [HttpPut(Router.StudentRouting.Edit)]
-        public async Task<IActionResult> Edit([FromBody] EditStudentCommand command)
+        [HttpPut(Router.StudentRouting.Update)]
+        public async Task<IActionResult> Update([FromBody] EditStudentCommand command)
         {
             return NewResult(await _mediator.Send(command));
         }

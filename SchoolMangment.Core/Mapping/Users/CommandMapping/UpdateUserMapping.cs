@@ -5,9 +5,9 @@ namespace SchoolMangment.Core.Mapping.Users
 {
     public partial class UserProfile
     {
-        public void CreateUserCommandMapping()
+        public void UpdateUserMapping()
         {
-            CreateMap<CreateUserCommand, AppUser>();
+            CreateMap<UpdateUserCommand, AppUser>();
         }
     }
 }
