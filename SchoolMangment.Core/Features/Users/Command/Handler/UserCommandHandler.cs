@@ -13,6 +13,7 @@ namespace SchoolMangment.Core.Features.Users.Command.Handler
         IRequestHandler<CreateUserCommand, Response<string>>,
         IRequestHandler<UpdateUserCommand, Response<string>>,
         IRequestHandler<DeleteUserCommand, Response<string>>
+        IRequestHandler<UpdateUserCommand, Response<string>>
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly IMapper _mapper;
@@ -74,7 +75,6 @@ namespace SchoolMangment.Core.Features.Users.Command.Handler
 
             return Success("");
         }
-
         public async Task<Response<string>> Handle(DeleteUserCommand request, CancellationToken cancellationToken)
         {
             var user = await _userManager.FindByIdAsync(request.Id);
