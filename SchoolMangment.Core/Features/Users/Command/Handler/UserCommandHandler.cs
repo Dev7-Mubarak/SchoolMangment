@@ -11,7 +11,8 @@ namespace SchoolMangment.Core.Features.Users.Command.Handler
 {
     public class UserCommandHandler : ResponseHandler,
         IRequestHandler<CreateUserCommand, Response<string>>,
-        IRequestHandler<UpdateUserCommand, Response<string>>
+        IRequestHandler<UpdateUserCommand, Response<string>>,
+        IRequestHandler<DeleteUserCommand, Response<string>>
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly IMapper _mapper;
@@ -72,6 +73,21 @@ namespace SchoolMangment.Core.Features.Users.Command.Handler
                 return BadRequest<string>();
 
             return Success("");
+        }
+
+        public async Task<Response<string>> Handle(DeleteUserCommand request, CancellationToken cancellationToken)
+        {
+            var user = await _userManager.FindByIdAsync(request.Id);
+
+            if (user == null)
+                return NotFound<string>();
+
+            var result = await _userManager.DeleteAsync(user);
+
+            if (!result.Succeeded)
+                return BadRequest<string>();
+
+            return Deleted<string>();
         }
     }
 }
