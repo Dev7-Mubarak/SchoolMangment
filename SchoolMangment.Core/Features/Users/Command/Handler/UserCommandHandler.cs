@@ -10,7 +10,8 @@ using SchoolMangment.Data.Identity;
 namespace SchoolMangment.Core.Features.Users.Command.Handler
 {
     public class UserCommandHandler : ResponseHandler,
-        IRequestHandler<CreateUserCommand, Response<string>>
+        IRequestHandler<CreateUserCommand, Response<string>>,
+        IRequestHandler<UpdateUserCommand, Response<string>>
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly IMapper _mapper;
@@ -50,6 +51,27 @@ namespace SchoolMangment.Core.Features.Users.Command.Handler
 
             return Created("");
 
+        }
+
+        public async Task<Response<string>> Handle(UpdateUserCommand request, CancellationToken cancellationToken)
+        {
+            //Check the id is Exist
+            var user = await _userManager.FindByIdAsync(request.Id);
+
+            if (user == null)
+            {
+                return NotFound<string>();
+            }
+            //maping
+            var userMapping = _mapper.Map(request, user);
+
+            //Update
+            var result = await _userManager.UpdateAsync(userMapping);
+
+            if (!result.Succeeded)
+                return BadRequest<string>();
+
+            return Success("");
         }
     }
 }
