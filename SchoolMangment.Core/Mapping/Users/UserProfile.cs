@@ -8,7 +8,6 @@ namespace SchoolMangment.Core.Mapping.Users
         {
             CreateUserMapping();
             UpdateUserMapping();
-            CreateUserCommandMapping();
             GetUserByIdQueryMapping();
             GetUserPagenationMapping();
         }

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SchoolMangment.Api.Base;
 using SchoolMangment.Core.Features.Students.Commands.Models;
 using SchoolMangment.Core.Features.Students.Queries.Models;
@@ -6,6 +7,8 @@ using Router = SchoolMangment.Data.AppMetaData.Router;
 
 namespace SchoolMangment.Api.Controllers
 {
+    [Authorize]
+    [ApiController]
     public class StudentsController : AppControllerBase
     {
 

@@ -47,6 +47,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Features\Authentication\Command\Responses\" />
+    <Folder Include="Features\Authentication\Query\Handler\" />
+    <Folder Include="Features\Authentication\Query\Modles\" />
+    <Folder Include="Features\Authentication\Query\Responses\" />
     <Folder Include="Features\Departments\Command\" />
     <Folder Include="Mapping\Departments\CommandMapping\" />
   </ItemGroup>

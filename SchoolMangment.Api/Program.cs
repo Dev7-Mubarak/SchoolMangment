@@ -21,7 +21,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddInfrastructureDependencies()
                 .AddServicesDependencies()
                 .AddCoreDependencies()
-                .AddServiceRegistration();
+                .AddServiceRegistration(builder.Configuration);
 #endregion
 
 #region Localization
@@ -88,6 +88,7 @@ app.UseHttpsRedirection();
 
 app.UseCors(Cors);
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

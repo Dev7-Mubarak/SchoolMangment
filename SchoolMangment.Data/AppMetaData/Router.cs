@@ -40,5 +40,16 @@
             public const string Update = Prefix + "Update";
             public const string Delete = Prefix + "{Id}";
         }
+
+        public static class Authenication
+        {
+            public const string Prefix = Rule + "Authenication/";
+            public const string List = Prefix + "List";
+            public const string Paginted = Prefix + "Paginted";
+            public const string GetById = Prefix + "{Id}";
+            public const string Create = Prefix + "Create";
+            public const string Update = Prefix + "Update";
+            public const string Delete = Prefix + "{Id}";
+        }
     }
 }

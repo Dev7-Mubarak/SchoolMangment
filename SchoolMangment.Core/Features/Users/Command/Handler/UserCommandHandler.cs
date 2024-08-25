@@ -13,7 +13,6 @@ namespace SchoolMangment.Core.Features.Users.Command.Handler
         IRequestHandler<CreateUserCommand, Response<string>>,
         IRequestHandler<UpdateUserCommand, Response<string>>,
         IRequestHandler<DeleteUserCommand, Response<string>>
-        IRequestHandler<UpdateUserCommand, Response<string>>
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly IMapper _mapper;
