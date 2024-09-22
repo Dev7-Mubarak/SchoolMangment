@@ -1,7 +1,3 @@
-Here’s a sample **README** file for your **School Management API** using **Clean Architecture**, **JWT Token**, and **Refresh Token**.
-
----
-
 # 🏫 School Management API
 
 A robust **School Management API** built using **Clean Architecture** to provide structured, scalable, and maintainable code. This API facilitates managing students, teachers, classes, and other school resources. Authentication is secured using **JWT tokens** with **refresh tokens** for session management.
@@ -121,7 +117,3 @@ We welcome contributions! Please follow these steps:
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-This **README** reflects the usage of **JWT** and **Refresh Tokens** along with a **Clean Architecture** pattern. You can customize further as needed for your School Management API.
